@@ -12,7 +12,7 @@ def load_dataset(url):
     dat = pd.read_csv(url)
     return pd.DataFrame(data=dat, columns=["text", "sentiment"])
 
-def preprocess_data(df):
+def clean_dataset(df):
     # convert sentiment (categorical) to label (numerical)
     # negative = 0, neutral = 1, positive = 2
     df["sentiment"]  = df.sentiment.map({"negative": 0, "neutral": 1, "positive": 2}) 
